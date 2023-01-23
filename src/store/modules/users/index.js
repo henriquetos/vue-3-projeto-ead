@@ -1,4 +1,4 @@
-import AuthService from "@/services/auth.service" //importei do codigo AuthService.js essa classe com todas informações
+import AuthService from "@/services/auth.service.js" //importei do codigo AuthService.js essa classe com todas informações
 
 export default{
     state: { //state são as coisas que um objeto vai ter e suas variaveis

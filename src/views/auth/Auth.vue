@@ -48,7 +48,14 @@
                                 <input type="password" name="password" placeholder="Senha" v-model="password" required>
                                 <i class="far fa-eye buttom"></i>
                             </div>
-                            <button class="btn primary" type="submit" @click.prevent="auth">
+                            <button 
+                            :class="[
+                            'btn',
+                            'primary',
+                            loading ? 'loading' : '' 
+                            ]" 
+                            type="submit" 
+                            @click.prevent="auth">
                             <span v-if="loading">Enviando...</span> <!-- se estiver ainda carregando mostra esse texto no botão, se não é Login -->
                             <span v-else>Login</span>
                             </button>
@@ -71,8 +78,9 @@
 <script>
 import { ref } from '@vue/reactivity'
 //import router from '@/router/index'
-import { useStore} from 'vuex'
+
 import router from '@/router'
+import { useStore } from 'vuex'
 
 export default {
     name: 'AuthLogin',
